@@ -1,0 +1,157 @@
+ADMIN 
+
+route : 
+    => DepartmentRoutes: /routes/department/routename
+    => AdminRoutes: /routes/admin/routename
+    => StudentRoutes: /routes/student/routename
+
+
+
+
+1. LOGIN : DepartmentRoutes.post("/login", UserLogin);
+
+2. AddNew User : DepartmentRoutes.post("/createNewUser",TokenValidation,RoleValidation([ROLES.ADMIN]),CreateNewUser);
+
+3. Upload Student Excel Sheet : AdminRoutes.post('/uploadStudentExcel',TokenValidation,RoleValidation([ROLES.ADMIN, ROLES.DEPARTMENT]),UploadStudentExcel);
+
+4. Semester Progression :AdminRoutes.put('/semesterProgression',TokenValidation,RoleValidation([ROLES.ADMIN, ROLES.DEPARTMENT]),
+SemesterProgression);
+
+5. Seach Student On Filter : AdminRoutes.get('/querySearchStudent',
+TokenValidation,
+RoleValidation([ROLES.ADMIN, ROLES.DEPARTMENT]),
+QuerySearchStudent);
+
+6. Get Particular Department Student Based on Semester : 
+AdminRoutes.get(
+  "/students/q",
+    TokenValidation,
+    RoleValidation([ROLES.ADMIN]),
+  QueryRegisteredStudents
+  );
+
+
+7. Search Associated Timeline Certificate :   AdminRoutes.get(
+    "/requests/q",
+    TokenValidation,
+    RoleValidation([ROLES.ADMIN]),
+    QueryCertificateRequests
+    );
+
+ 8. UpdateAdminDetails : AdminRoutes.put('/updateAdminDetails',
+TokenValidation,
+RoleValidation([ROLES.ADMIN]),
+UpdateAdminDetails);   
+
+9. UpdateAdmin Username : 
+AdminRoutes.put('/updateUsername',
+TokenValidation,
+RoleValidation([ROLES.ADMIN]),
+UpdateUsername);
+
+
+10. UpdateAdminPassword: AdminRoutes.put('/updatePassword',
+TokenValidation,
+RoleValidation([ROLES.ADMIN]),
+UpdatePassword);
+
+11. CreateDynamicCategory : AdminRoutes.post('/createDynamicCategory',
+TokenValidation,
+RoleValidation([ROLES.ADMIN]),
+CreateDynamicCategory);
+
+12. GetAllDynamicCategory : AdminRoutes.get('/getAllDynamicCategory',
+TokenValidation,
+RoleValidation([ROLES.ADMIN]),
+GetAllDynamicCategory)
+
+13. UpdateDynamicCategory : AdminRoutes.put('/updateDynamicCategory',
+TokenValidation,
+RoleValidation([ROLES.ADMIN]),
+UpdateDynamicCategory);
+
+14. DeleteDynamicCategory : AdminRoutes.delete('/deleteDynamicCategory',
+TokenValidation,
+RoleValidation([ROLES.ADMIN]),
+DeleteDynamicCategory);
+
+
+15. CreateNew Department :    AdminRoutes.post('/createNewDepartment',
+    TokenValidation,
+    RoleValidation([ROLES.ADMIN]),
+    CreateNewDepartment
+    )
+
+ 16 . GetAllDepartments: AdminRoutes.get('/readAllDepartments',
+    TokenValidation,
+    RoleValidation([ROLES.ADMIN]),
+  ReadAllDepartments
+  )   
+
+ 17 .  UpdateDepartmentDetails:  AdminRoutes.put('/updateDepartmentDetails',
+  TokenValidation,
+  RoleValidation([ROLES.ADMIN]),
+  UpdateDepartmentDetails
+)
+
+ 18 . DeleteDepartment:AdminRoutes.put('/updateDepartmentDetails',
+  TokenValidation,
+  RoleValidation([ROLES.ADMIN]),
+  UpdateDepartmentDetails
+)
+
+19. CreateDynamicCertificate :  AdminRoutes.post('/createDynamicCertificate',
+    TokenValidation,
+    RoleValidation([ROLES.ADMIN]),
+    CreateDynamicCertificate
+  )
+
+
+
+20. DeleteDynamicCertificate :AdminRoutes.delete('/deleteDynamicCertificate',
+TokenValidation,
+RoleValidation([ROLES.ADMIN])
+, DeleteDynamicCertificate
+)
+
+21. UpdateDynamicCertificate : AdminRoutes.put('/updateDynamicCertificate',
+TokenValidation,
+RoleValidation([ROLES.ADMIN]),
+UpdateDynamicCertificate
+)
+
+22. GetAllDynamicCertificate: StudentRoutes.get('/certificate/getAllCertificateType', TokenValidation, RoleValidation([ROLES.STUDENT]), GetAllCertificateType)
+
+23. Profile Details : AdminRoutes.get('/getProfileDetails', TokenValidation, RoleValidation([ROLES.ADMIN, ROLES.DEPARTMENT]), GetProfileDetails)
+
+
+24. GetUsersByDepartmentId : DepartmentRoutes.get(
+  "/getAllUsers/:departmentId",
+  TokenValidation,
+  RoleValidation([ROLES.ADMIN]),
+  GetUsersByDepartmentId
+);
+
+25. Delete An Faculty : DepartmentRoutes.delete(
+  "/deleteUser/:userId",
+  TokenValidation,
+  RoleValidation([ROLES.ADMIN]),
+  DeleteUser
+)
+
+26 .  AllUsers :  DepartmentRoutes.get(
+  "/getAllUsers",
+  TokenValidation,
+  RoleValidation([ROLES.ADMIN]),
+  GetAllUsers
+);
+
+
+
+
+
+
+
+
+
+

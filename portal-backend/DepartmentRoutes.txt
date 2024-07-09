@@ -1,0 +1,49 @@
+ADMIN 
+
+route : 
+    => DepartmentRoutes: /routes/department/routename
+    => AdminRoutes: /routes/admin/routename
+    => StudentRoutes: /routes/student/routename
+
+
+1. GetStudentOnEnrollment : DepartmentRoutes.get(
+  "/getStudentData/:enrollment",
+  TokenValidation,
+  RoleValidation([ROLES.DEPARTMENT, ROLES.ADMIN]),
+  ReadStudentData
+);
+
+
+2. GetCertificateRequest: DepartmentRoutes.get(
+  "/getAllCertificateRequests",
+  TokenValidation,
+  RoleValidation([ROLES.ADMIN, ROLES.DEPARTMENT]),
+  GetAllCertificateRequests
+);
+
+3. UpdateCertificateRequestStatus :DepartmentRoutes.patch(
+  "/updateCertificateRequestStatus",
+  TokenValidation,
+  RoleValidation([ROLES.ADMIN, ROLES.DEPARTMENT]),
+  UpdateCertificateRequestStatus
+);
+
+4. Search Student (Filter Based) : 
+DepartmentRoutes.get(
+  "/getDepartmentStudentDetails",
+  TokenValidation,
+  RoleValidation([ROLES.ADMIN, ROLES.DEPARTMENT]),
+  GetDepartmentStudentDetails
+);
+
+5. ApproveStudentOnDepartment : 
+
+
+
+
+
+
+
+
+
+
