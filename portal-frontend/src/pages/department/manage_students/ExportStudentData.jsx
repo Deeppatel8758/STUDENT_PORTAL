@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 // import data from './data';
 import axios from "axios";
-import Datatoexcel from "./Datatoexcel";
 import { Navigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import Selection from "../../../components/test/Selection";
 import { useNavigate } from "react-router-dom";
 // import PaginationForStudent from '../../../components/test/PaginationForStudent';
 import NetworkRoutes from "../../../NetworkRoutes";
+import DataToExcel from "./DataToExcel";
 
 export default function ExportStudentData() {
   const Navigate = useNavigate();
@@ -270,7 +270,7 @@ export default function ExportStudentData() {
                         onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
                     /> */}
 
-          <Datatoexcel jsonData={jsonData} />
+          <DataToExcel jsonData={jsonData} />
         </div>
       </div>
     </>
