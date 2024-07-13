@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import data from "./data";
 import axios from "axios";
-import Datatoexel from "../manage_students/Datatoexel";
+import DataToExcel from "../manage_students/DataToExcel";
 import { Navigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import Selection from "../../../components/test/Selection";
@@ -212,7 +212,7 @@ export default function StudentDetails() {
             totalPages={Math.ceil(jsonData.length / itemsPerPage)}
             onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
           />
-          <Datatoexel jsonData={jsonData} />
+          <DataToExcel jsonData={jsonData} />
         </div>
       </div>
     </>
